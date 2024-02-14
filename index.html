@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <style>
+        .main {
+            width: 50%;
+            display: grid;
+            grid-gap: 80px;
+            padding: 20px;
+            margin: 50px auto;
+            border: 5px solid;
+            border-image: linear-gradient(black, red);
+            border-image-slice: 1;
+            box-shadow: -20px 30px 50px rgb(92, 15, 15);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+        
+        .spin {
+            height: 40px;
+            width: 40px;
+            margin: auto;
+            border: 5px dotted gray;
+            border-top: 5px dotted rgb(228, 15, 15);
+            border-radius: 50%;
+            animation: spinner 0.8s linear infinite;
+        }
+        
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <style>
+        .heart {
+            margin: auto;
+            height: 70px;
+            width: 70px;
+            background: #ec2020;
+            position: relative;
+            transform: rotate(-45deg);
+            box-shadow: -10px 10px 9px rgb(186, 8, 8);
+            animation: heartbeat 1s linear infinite;
+        }
+        
+        .heart::before {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background: #ec2020;
+            top: -50%;
+            border-radius: 50px;
+        }
+        
+        .heart::after {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background: #ec2020;
+            right: -50%;
+            border-radius: 50px;
+        }
+        
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(-45deg) scale(1);
+            }
+            50% {
+                transform: rotate(-45deg)scale(2);
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+    </style>
+    <style>
+        button {
+            padding: 20px;
+            background: linear-gradient(black, red);
+            color: white;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        
+        #n:hover {
+            transform: translate(80px);
+        }
+        
+        .like {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="spin"></div>
+
+        <div class="heart"></div>
+        <div class="like">
+            <p>Do you love me???</p>
+            <button id="y" onclick="alert('I love u toooo!!')">Yes</button>
+            <button id="n">No</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
